@@ -5,12 +5,14 @@ import './index.css';
 import Loja from './componentes/Loja';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from "react-router-dom";
+import {LojaProvider} from "./context/LojaContext";
 
 ReactDOM.render(
-    <BrowserRouter>
+    <LojaProvider>
         <Loja nome="Facisa Store"/>
-    </BrowserRouter>,
-    document.getElementById('root'));
+    </LojaProvider>,
+    document.getElementById('root')
+);
 
 // Se for user serviceworker, troca por .register
 serviceWorker.unregister();

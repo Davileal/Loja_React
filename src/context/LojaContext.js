@@ -29,9 +29,6 @@ export class LojaProvider extends Component {
                     });
                     this.setState({produtos});
                 },
-                visualizarProduto: (produto) => {
-                    this.setState({produto: produto});
-                },
                 comprar: (produto) => {
                     let carrinho = [...this.state.carrinho, produto];
                     this.setState({carrinho});

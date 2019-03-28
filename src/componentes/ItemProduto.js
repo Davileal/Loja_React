@@ -10,19 +10,19 @@ class ItemProduto extends Component {
     render() {
         return (
             <Col xs={3}>
-                <Link to={'/visualizarProduto/' + this.props.produto.nome}>
-                    <Card className="text-center">
+                <Card className="text-center">
+                    <Link to={'/visualizarProduto/' + this.props.produto.nome}>
                         <Card.Header as="h5">{this.props.produto.nome}</Card.Header>
                         <Card.Img variant="top" src={this.props.produto.imagem}/>
-                        <Card.Body>
-                            <Card.Title><FormataMoeda valor={this.props.produto.preco}/></Card.Title>
-                            <Button variant="outline-primary" block
-                                    onClick={() => this.context.comprar(this.props.produto)}>
-                                Comprar
-                            </Button>
-                        </Card.Body>
-                    </Card>
-                </Link>
+                    </Link>
+                    <Card.Body>
+                        <Card.Title><FormataMoeda valor={this.props.produto.preco}/></Card.Title>
+                        <Button variant="outline-primary" block
+                                onClick={() => this.context.comprar(this.props.produto)}>
+                            Comprar
+                        </Button>
+                    </Card.Body>
+                </Card>
             </Col>
         );
     }

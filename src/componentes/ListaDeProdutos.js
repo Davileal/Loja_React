@@ -4,6 +4,8 @@ import ItemProduto from './ItemProduto';
 import Toolkit from '../util/Toolkit';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
+import BarraDeBusca from "./BarraDeBusca";
+import CarrinhoDeCompras from "./CarrinhoDeCompras";
 
 const PRODUTOS_POR_LINHA = 4;
 
@@ -20,9 +22,13 @@ class ListaDeProdutos extends Component {
 
     render() {
         return (
-            <Container>
-                {Toolkit.splitArray(this.context.state.produtos, PRODUTOS_POR_LINHA).map(this.renderProduto)}
-            </Container>
+            <div>
+                <BarraDeBusca/>
+                <Container>
+                    {Toolkit.splitArray(this.context.state.produtos, PRODUTOS_POR_LINHA).map(this.renderProduto)}
+                </Container>
+                <CarrinhoDeCompras/>
+            </div>
         );
     }
 }
